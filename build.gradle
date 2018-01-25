@@ -1,0 +1,112 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.1.BUILD-SNAPSHOT'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")  
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+apply plugin: 'jacoco'
+apply plugin: 'sonar-runner'
+apply plugin: 'war'
+
+war {
+    baseName = 'SIBDemoPortal'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+jar {
+    baseName = 'SIBDemoPortal'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile ('org.hsqldb:hsqldb:2.3.3')	
+	compile("org.postgresql:postgresql:9.3-1102-jdbc41")
+	compile('mysql:mysql-connector-java')	
+  	//compile('org.flywaydb:flyway-core')
+  	compile("org.springframework.security.oauth:spring-security-oauth2")
+  	compile("org.springframework.boot:spring-boot-starter-batch")
+  	compile ('org.json:json:20160212')
+  	compile('com.mangofactory:swagger-springmvc:1.0.2')
+	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
+  	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
+  	testCompile('org.springframework.boot:spring-boot-starter-test')
+  	compile("io.springfox:springfox-swagger-ui:2.7.0")
+    compile("io.springfox:springfox-swagger2:2.7.0") 
+    compile ('com.rabbitmq:amqp-client:4.1.1')
+    compile ('com.google.cloud:google-cloud-storage:1.14.0')
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+  	
+}
+
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7'
+	}
+}
+
+test {
+       filter {
+       	 includeTestsMatching "*Test"
+       }
+       }
+
+jacoco {
+    toolVersion = "0.7.4.201502262128"
+    reportsDir = new File("$buildDir/reports/jacoco")	
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+    }
+sonarRunner { 
+    sonarProperties {
+	property "sonar.host.url", "http://192.168.150.122:9003"
+	property "sonar.login" ,"skatla"
+	property "sonar.password", "welcome@456"
+	property "sonar.jdbc.url","jdbc:mysql://192.168.150.122:3306/mysonar1?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance"
+	property "sonar.jdbc.driverClassName" ,"com.mysql.jdbc.Driver"
+	property "sonar.jdbc.username","root"
+	property "sonar.jdbc.password", "root"
+	property "sonar.sourceEncoding", "UTF-8"
+	property "sonar.sources", "/var/lib/jenkins/jobs/platform-points-service/workspace/PointsService/src/main/java"
+	property "sonar.language","java"
+	property "sonar.projectKey","PointsService"
+	property "sonar.projectName", "PointsService"
+	property "sonar.projectVersion"  "1.0"
+	property "sonar.exclusions", "/var/lib/jenkins/jobs/platform-points-service/workspace/PointsService/src/test/java/**"
+	property "sonar.tests", "/var/lib/jenkins/jobs/platform-points-service/workspace/PointsService/src/test"
+	property "sonar.binaries", "/var/lib/jenkins/jobs/platform-points-service/workspace/PointsService/build/classes"
+	property "sonar.dynamicAnalysis", "reuseReports"
+	property "sonar.junit.reportsPath" , "/var/lib/jenkins/jobs/platform-points-service/workspace/PointsService/build/reports"
+	property "sonar.java.coveragePlugin", "/var/lib/jenkins/jobs/platform-points-service/workspace/PointsService/build/jacoco"
+	property "sonar.jacoco.reportPath" "${project.buildDir}/jacoco/test.exec"
+}
+}
+}
+
+

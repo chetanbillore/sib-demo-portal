@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sib-demo-portal",
+  "private_key_id": "8793e862e96ba0897ba0c177cb37153877afbac9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCfN9YiG70PdTkL\n5ZrZLjfMxHDeF9nFJNBC991kPgZ67Q2XSK6j1DapEgrY5YwYixYoRokxIT/f5k+b\n356s0Lx42uGxP4ZsFiM+mEo3/oiP4JLXZF3VwYtmJ1sJB6Su3BCBwhhA4Pt1K27a\nKOwUVixP0Tn+jaJBWRJEB1nis0XbnOZil9Kz1Wx51GfA59HLNTiRktkL2GZvEoMg\n+tJIBM3J06vg84CDi290SqUczF+0fJkhZ2D4PXgEgXAamKywBfT3W2t+MORg2G0T\n/wyxChzY0nDSmBGRR8aPjqZpdMu7VxUijMYaHWBBYtpPL6f1gt4YKHpbVJxdhW6Y\nLP50NGyBAgMBAAECggEAAJbt2LOLIKjzsd6rCmkkqzfmv51Uu788KuRQso81Tk9H\ncJN8yJAqokM9Sh9xhdUhJsREPAYPWnBmHjbgNFG4B8MaUYN4vruXRoMuUThu46tF\nuNXnIZIy04fP1WZvv65Z2a7hto14ic74eNKG0n40t8P3zfTy9APM6jx4hxsYXuHq\nEFznn3SirkbI5+iaj5KtkodvP4r5vAn5kRnykPZC5IEqdanvsfYKwF/Of3UVGMn1\nSxgk6AVNAuXygPPbyWIrTU1P/ZBdJTYmSK8F5b+wqNk5ypsW6scs4wa7mbWZvAVE\nhZgwjKq1dZcCz0tDuNyepGS7+QHP21BJ/fBUlYvUsQKBgQDV+PYKdPVQotXWAcLP\nq/+WtarWNZaLRTxao7xORM0Qhpn0U8yuKu6aczklhSGwyi1mJbEoi8bVFa+G6szT\n2Xu8jX0wN57vJYe5BmkvwVQ61B5L4OUGtywyMyKHc2xRQVDLZ3d33qE07A8MklDy\nsw2px9WqIWZMP0DksATRr8zlsQKBgQC+fbI4W0bwGahTBxDOOKKGDR6s7ZOl73hX\nB0QCS4E1ZBsGU8+lrMXSLG6UJ4EmMfqThHvSiRMvGNgRaicxBVaFMDBu6qKwA5d7\ni7+HsaL0kHezBj1g4ej2SMrbT3bH99+hoYrcArca1DqV+sqKPCIplsddl7DgbHbv\nhlJ6imoX0QKBgQClIExAJaJraD69uP4uZf4IwInmZdSYBgZdrJ5ViKL4befBtinu\n/xLD/sfLPMKTPHNssQnW0IfRSbr705fepafoCwjhfQsaY0wqbdgfEoN+ItR+mkAk\nvpdM5klvXpPo4Q8I6gA4cYbW4JV8ji4KHkQdEirB8KSRkv7xfSU67QCjAQKBgA+V\n1SkLPsiSMNVqNJPKynFRTXs0jOn8p8nnDEdrygyGPjfMT6bsddr2S63PdZ+cYzYC\nlubo1Cr8S2FRYBeAqk2HXc8VX24rPQ+cpXUCsaR01XZOQmNU2GyeFArRe5Rs0V02\nDFhn2HdXedufg0bAGMNyVKlxqcUS2sBKKyFfhcKhAoGAVINFMO2ui6tYYSjrTPSm\nlaoE9tofhkN8wavb5ZM5VJjXhrLT5g2m09lQu+zRBs7R/CR1hb6N8qWerNDlO/gx\n8e/5BrOnc2NLLx9E2UoIcWZbH31zk26mbz0sABWxzri8kKntZNKNmZ9ypfBZcwmP\n1KaeHi1hk5XnSm0JjEz0Q3c=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sib-demo-portal@appspot.gserviceaccount.com",
+  "client_id": "103847728745403678490",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sib-demo-portal%40appspot.gserviceaccount.com"
+}
