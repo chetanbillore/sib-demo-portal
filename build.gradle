@@ -6,18 +6,24 @@ buildscript {
 		mavenCentral()
 		maven { url "https://repo.spring.io/snapshot" }
 		maven { url "https://repo.spring.io/milestone" }
+		maven { url "https://plugins.gradle.org/m2/" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")  
+//		classpath ("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6")
 	}
 }
+
+/* plugins {
+  id "org.sonarqube" // version "2.6"
+}*/
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
 apply plugin: 'jacoco'
-apply plugin: 'sonar-runner'
 apply plugin: 'war'
+//apply plugin: "org.sonarqube"
 
 war {
     baseName = 'SIBDemoPortal'
@@ -57,6 +63,10 @@ dependencies {
     compile ('com.rabbitmq:amqp-client:4.1.1')
     compile ('com.google.cloud:google-cloud-storage:1.14.0')
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    // https://mvnrepository.com/artifact/org.ow2.asm/asm
+	compile group: 'org.ow2.asm', name: 'asm-debug-all', version: '6.0_ALPHA'
+
+    
   	
 }
 
@@ -83,8 +93,8 @@ jacocoTestReport {
         xml.enabled true
         csv.enabled false
     }
-sonarRunner { 
-    sonarProperties {
+/*sonarqube { 
+    properties {
 	property "sonar.host.url", "http://192.168.150.122:9003"
 	property "sonar.login" ,"skatla"
 	property "sonar.password", "welcome@456"
@@ -106,7 +116,5 @@ sonarRunner {
 	property "sonar.java.coveragePlugin", "/var/lib/jenkins/jobs/platform-points-service/workspace/PointsService/build/jacoco"
 	property "sonar.jacoco.reportPath" "${project.buildDir}/jacoco/test.exec"
 }
+}*/
 }
-}
-
-
